@@ -1,6 +1,9 @@
 package rubbish
 
 import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
 	"strings"
 
 	"github.com/wuxiaoxiaoshen/rubbish/data/Collection/waste"
@@ -30,6 +33,16 @@ func (g Garbage) ClassType() string {
 		return waste.Waste[g.Name]
 	}
 	return "None"
+}
+
+func (g Garbage) ClassTypeOnline() ([]byte, error) {
+	url := fmt.Sprintf("http://www.atoolbox.net/api/GetRefuseClassification.php?key=%s", g.Name)
+	response, err := http.Get(url)
+	if err != nil || response.StatusCode != http.StatusOK {
+		return nil, err
+	}
+	defer response.Body.Close()
+	return ioutil.ReadAll(response.Body)
 }
 
 func (g Garbage) Classification() WasteClass {

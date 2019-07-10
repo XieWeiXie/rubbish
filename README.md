@@ -71,6 +71,7 @@ type Garbage struct {
 
 - IsExists: 数据集中是否存在
 - ClassType： 类别：干垃圾、湿垃圾、可回收垃圾、有害垃圾
+- ClassTypeOnline: 类别，联网查询
 - Requirement： 投放要求
 - Define: 概念，比如干垃圾是什么
 - Help: 投放要求

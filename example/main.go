@@ -23,4 +23,8 @@ func main() {
 			fmt.Println(i, "No Data")
 		}
 	}
+
+	b := rubbish.NewGarbage("八宝粥")
+	t, _ := b.ClassTypeOnline()
+	fmt.Println(string(t))
 }
