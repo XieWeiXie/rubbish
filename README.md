@@ -79,7 +79,7 @@ type Garbage struct {
 
 ## Data
 
-> 参考至诸多小程序。[数据集](https://github.com/wuxiaoxiaoshen/Collection)
+> 参考诸多小程序。[数据集](https://github.com/wuxiaoxiaoshen/Collection)
 
 
 Author: @wuxiaoxioshen
